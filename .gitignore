@@ -1,3 +1,6 @@
 .deps/ 
 artifacts/
 .states/
+ethers-simple-storage/node_modules
+ethers-simple-storage/yarn.lock
+

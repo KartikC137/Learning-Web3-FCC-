@@ -1,6 +1,5 @@
 .deps/ 
 artifacts/
 .states/
-etherjs-simple-storage/node_modules
-etherjs-simple-storage/yarn.lock
+
 

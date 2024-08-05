@@ -15,9 +15,36 @@
 // Fulfilled
 // Rejected
 
+const ethers = require("ethers");
+const fs = require("fs-extra");
+
 async function main() {
   // compile them in our code
   // compile them seperately
+  // http://127.0.0.1:7545
+  const provider = new ethers.providers.JsonRpcProvider(
+    "http://127.0.0.1:7545"
+  );
+  const wallet = new ethers.Wallet(
+    "0x2166db530a380d7faa64b784ab154c46286c92019330716d41d0891c96a93032",
+    provider
+  );
+
+  const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
+  const binary = fs.readFileSync(
+    "./SimpleStorage_sol_SimpleStorage.bin",
+    "utf-8"
+  );
+  const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
+
+  console.log("Please wait, deploying...");
+
+  const contract = await contractFactory.deploy({
+    gasLimit: 6721975,
+    gasPrice: 20000000000,
+  }); //stop here and wait for contract to be deployed, hence await keyword
+
+  console.log(contract);
 }
 
 main()

@@ -43,6 +43,12 @@ async function main() {
     gasLimit: 6721975,
     gasPrice: 20000000000,
   }); //stop here and wait for contract to be deployed, hence await keyword
+  const transactionReceipt = await contract.deployTransaction.wait(1);
+
+  console.log("Here is the deployement transaction: (transaction response)");
+  console.log(contract.deployTransaction);
+  console.log("Here is the transaction receipt: ");
+  console.log(transactionReceipt);
 
   console.log(contract);
 }

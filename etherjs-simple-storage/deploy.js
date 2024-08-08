@@ -21,12 +21,12 @@ const fs = require("fs-extra");
 async function main() {
   // compile them in our code
   // compile them seperately
-  // http://127.0.0.1:7545
+
   const provider = new ethers.providers.JsonRpcProvider(
     "http://127.0.0.1:7545"
   );
   const wallet = new ethers.Wallet(
-    "0x2166db530a380d7faa64b784ab154c46286c92019330716d41d0891c96a93032",
+    "0x59e73af0bf1a59ec1a8cd203b93a7cbe3a001784dea4adfebc1bfb934c214b08",
     provider
   );
 
@@ -35,22 +35,20 @@ async function main() {
     "./SimpleStorage_sol_SimpleStorage.bin",
     "utf-8"
   );
+
   const contractFactory = new ethers.ContractFactory(abi, binary, wallet);
-
   console.log("Please wait, deploying...");
+  const contract = await contractFactory.deploy(); //stop here and wait for contract to be deployed, hence await keyword
+  await contract.deployTransaction.wait(1);
 
-  const contract = await contractFactory.deploy({
-    gasLimit: 6721975,
-    gasPrice: 20000000000,
-  }); //stop here and wait for contract to be deployed, hence await keyword
-  const transactionReceipt = await contract.deployTransaction.wait(1);
+  //get number
 
-  console.log("Here is the deployement transaction: (transaction response)");
-  console.log(contract.deployTransaction);
-  console.log("Here is the transaction receipt: ");
-  console.log(transactionReceipt);
-
-  console.log(contract);
+  const currentFavouriteNumber = await contract.getNumber();
+  console.log("Current Favourite Number: " + currentFavouriteNumber.toString());
+  const transactionResponse = await contract.store("7");
+  const transactionReceipt = await transactionResponse.wait(1);
+  const updatedFavouriteNumber = await contract.getNumber();
+  console.log("Updated Favourite Number: " + updatedFavouriteNumber.toString());
 }
 
 main()

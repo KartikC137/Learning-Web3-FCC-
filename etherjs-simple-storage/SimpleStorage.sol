@@ -1,7 +1,9 @@
 // I'm a comment!
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.25;
+pragma solidity ^0.8.19; //make sure to use 0.8.19
+
+// (Due to 0.8.20 introducing an opcode supported only on ETH mainnent)
 
 // pragma solidity ^0.8.0;
 // pragma solidity >=0.8.0 <0.9.0;
@@ -22,7 +24,7 @@ contract SimpleStorage {
         favoriteNumber = _favoriteNumber;
     }
 
-    function retrieve() public view returns (uint256) {
+    function getNumber() public view returns (uint256) {
         return favoriteNumber;
     }
 

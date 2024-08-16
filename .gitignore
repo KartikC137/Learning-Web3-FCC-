@@ -1,6 +1,5 @@
 .deps
 artifacts
 .states
-.env
-node_modules
+etherjs-simple-storage/{node_modules,.env,yarn.lock}
 

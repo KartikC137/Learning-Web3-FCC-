@@ -25,10 +25,7 @@ async function main() {
   const provider = new ethers.providers.JsonRpcProvider(
     "http://127.0.0.1:7545"
   );
-  const wallet = new ethers.Wallet(
-    "0x59e73af0bf1a59ec1a8cd203b93a7cbe3a001784dea4adfebc1bfb934c214b08",
-    provider
-  );
+  const wallet = new ethers.Wallet("", provider);
 
   const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
   const binary = fs.readFileSync(

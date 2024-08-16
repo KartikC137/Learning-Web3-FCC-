@@ -4,4 +4,5 @@ artifacts
 etherjs-simple-storage/yarn.lock
 etherjs-simple-storage/node_modules
 etherjs-simple-storage/.env
+etherjs-simple-storage/.encryptedKey.json
 

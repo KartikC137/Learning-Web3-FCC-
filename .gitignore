@@ -1,5 +1,6 @@
-.deps/ 
-artifacts/
-.states/
-
+.deps
+artifacts
+.states
+.env
+node_modules
 

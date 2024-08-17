@@ -8,16 +8,16 @@
 - [x] 3. Remix Storage Factory
 - [x] 4. Remix Fund Me
 - [x] 5. Ethers.js Simple Storage
-- [] 6. Hardhat Simple Storage
-- [] 7. Hardhat Fund Me
-- [] 8. HTML / Javascript Fund Me (Full Stack / Front End)
-- [] 9. Hardhat Smart Contract Lottery
-- [] 10. NextJS Smart Contract Lottery (Full Stack / Front End)
-- [] 11. Hardhat Starter Kit
-- [] 12. Hardhat ERC20s
-- [] 13. Hardhat DeFi & Aave
-- [] 14. Hardhat NFTs
-- [] 15. NextJS NFT Marketplace (Full Stack / Front End)
-- [] 16. Hardhat Upgrades
-- [] 17. Hardhat DAOs
-- [] 18. Security & Auditing
+- [ ] 6. Hardhat Simple Storage
+- [ ] 7. Hardhat Fund Me
+- [ ] 8. HTML / Javascript Fund Me (Full Stack / Front End)
+- [ ] 9. Hardhat Smart Contract Lottery
+- [ ] 10. NextJS Smart Contract Lottery (Full Stack / Front End)
+- [ ] 11. Hardhat Starter Kit
+- [ ] 12. Hardhat ERC20s
+- [ ] 13. Hardhat DeFi & Aave
+- [ ] 14. Hardhat NFTs
+- [ ] 15. NextJS NFT Marketplace (Full Stack / Front End)
+- [ ] 16. Hardhat Upgrades
+- [ ] 17. Hardhat DAOs
+- [ ] 18. Security & Auditing

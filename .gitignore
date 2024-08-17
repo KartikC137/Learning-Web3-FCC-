@@ -1,6 +1,4 @@
 .deps
-artifacts
-.states
 etherjs-simple-storage/yarn.lock
 etherjs-simple-storage/node_modules
 etherjs-simple-storage/.env

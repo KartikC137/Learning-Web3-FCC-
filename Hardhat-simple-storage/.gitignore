@@ -9,6 +9,8 @@
 
 test
 .prettierrc
+.prettierignore
+yarn.lock
 .editorconfig
 
 # Swap the comments on the following lines if you wish to use zero-installs

@@ -5,6 +5,9 @@
 !.yarn/sdks
 !.yarn/versions
 
+# Personal
+
+test
 .prettierrc
 .editorconfig
 

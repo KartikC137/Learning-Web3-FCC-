@@ -1,12 +1,14 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
 require("./tasks/block-number")
+require("hardhat-gas-reporter")
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
-const sepoliaRPC = process.env.SEPOLIA_RPC_URL
-const pKEY = process.env.PRIVATE_KEY
-const ESapiKey = process.env.ETHERSCAN_API_KEY
+const sepoliaRPC = process.env.SEPOLIA_RPC_URL || ""
+const pKEY = process.env.PRIVATE_KEY || "0xkey"
+const ESapiKey = process.env.ETHERSCAN_API_KEY || "key"
+const CMCapiKey = process.env.COINMARKET_API_KEY || "key"
 
 module.exports = {
     defaultNetwork: "hardhat",
@@ -28,5 +30,13 @@ module.exports = {
         apiKey: {
             sepolia: ESapiKey,
         },
+    },
+
+    gasReporter: {
+        enabled: true,
+        outputFile: "gas-report.txt",
+        noColors: true,
+        currency: "USD",
+        coinmaketcap: CMCapiKey,
     },
 }

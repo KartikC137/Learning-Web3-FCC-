@@ -2,6 +2,7 @@ require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
 require("./tasks/block-number")
 require("hardhat-gas-reporter")
+require("solidity-coverage")
 
 /** @type import('hardhat/config').HardhatUserConfig */
 

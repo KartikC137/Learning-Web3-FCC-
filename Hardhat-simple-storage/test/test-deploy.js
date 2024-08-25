@@ -31,13 +31,23 @@ describe("SimpleStorage", function () {
     })
 
     it("Should update when we call store", async function () {
-        const expectedValue = "7"
+        const expectedValue = "69"
         const transactionResponse = await simpleStorage.store(expectedValue)
 
         await transactionResponse.wait(1)
         const currentValue = await simpleStorage.retrieve()
 
         await delay(500)
+        assert.equal(currentValue.toString(), expectedValue)
+    })
+
+    it("First Person(index 0) is default", async function () {
+        const defaultPerson = await simpleStorage.addPerson("default", 0)
+        const index = 0
+        await defaultPerson.wait(1)
+        const currentValue = await simpleStorage.getPersonName(index)
+        const expectedValue = "default"
+
         assert.equal(currentValue.toString(), expectedValue)
     })
 })

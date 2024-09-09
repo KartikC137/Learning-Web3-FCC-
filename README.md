@@ -9,7 +9,7 @@
 - [x] 4. Remix Fund Me
 - [x] 5. Ethers.js Simple Storage
 - [x] 6. Hardhat Simple Storage
-- [ ] 7. Hardhat Fund Me
+- [x] 7. Hardhat Fund Me
 - [ ] 8. HTML / Javascript Fund Me (Full Stack / Front End)
 - [ ] 9. Hardhat Smart Contract Lottery
 - [ ] 10. NextJS Smart Contract Lottery (Full Stack / Front End)

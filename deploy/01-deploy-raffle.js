@@ -12,6 +12,10 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
             "VRFCoordinatorV2_5Mock",
         )
         vrfCoodinatorV2address = vrfCoordinatorV2_5Mock.address
+        subscription = vrfCoordinatorV2_5Mock.createSubscription
+        subId = await subscription.wait(1)
+        fundSubscription = vrfCoodinatorV2_Mock.fundSubscription
+        //creating subcription in progress
     } else {
         vrfCoodinatorV2address = networkConfig[chainId]["vrfCoordinatorV2"]
     }

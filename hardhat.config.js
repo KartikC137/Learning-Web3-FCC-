@@ -1,6 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox")
 require("dotenv").config()
 require("hardhat-contract-sizer")
+require("hardhat-deploy")
+require("@nomiclabs/hardhat-ethers")
 
 const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || ""
 
@@ -35,6 +37,11 @@ module.exports = {
             accounts: [PRIVATE_KEY],
             chainId: 11155111,
             blockConfirmations: 6,
+        },
+    },
+    etherscan: {
+        apiKey: {
+            sepolia: ETHERSCAN_API_KEY,
         },
     },
 }

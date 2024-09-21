@@ -1,6 +1,6 @@
 const { developmentChains } = require("../helper-hardhat-config.js")
-
-const BASE_FEE = ethers.utils.parseEther("0.25") // 0.25 Link per request is Premium fee.
+const { ethers } = require("hardhat")
+const BASE_FEE = ethers.parseEther("0.25") // 0.25 Link per request is Premium fee.
 const GAS_PRICE_LINK = 1e9 //calculated value based on the gas price of the chain
 const WEI_PER_UNIT_LINK = 4609050109111871
 // Chainlink Nodes pay the gas fees to give us randomness & do external execution
@@ -18,8 +18,9 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         await deploy("VRFCoordinatorV2_5Mock", {
             from: deployer,
             log: true,
-            arg: args,
+            args: args,
         })
+
         log("Mocks Deployed")
         log("----------------------------------------------------")
     }

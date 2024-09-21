@@ -43,7 +43,7 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
     uint256 private immutable i_entraceFee;
     address payable[] private s_players;
     bytes32 private immutable i_gasLane;
-    uint64 private immutable i_subId;
+    uint256 private immutable i_subId;
     uint16 private constant REQUEST_CONFIRMATIONS = 3;
     uint32 private immutable i_gasLimit;
     uint32 private constant NUM_WORDS = 1;
@@ -61,10 +61,10 @@ contract Raffle is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
 
     /*Functions*/
     constructor(
-        address vrfCoordinatorV2, // contract (deploy mocks)
+        address vrfCoordinatorV2, // contract (deploy mocks for local hosts)
         uint256 entraceFee,
         bytes32 gasLane,
-        uint64 subscriptionId,
+        uint256 subscriptionId,
         uint32 callBackGasLimit,
         uint256 interval
     ) VRFConsumerBaseV2Plus(vrfCoordinatorV2) {

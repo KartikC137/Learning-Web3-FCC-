@@ -29,7 +29,7 @@ module.exports = {
     networks: {
         hardhat: {
             chainId: 31337,
-            blockConfirmations: 6,
+            blockConfirmations: 1,
             // gasPrice: 130000000000,
         },
         sepolia: {

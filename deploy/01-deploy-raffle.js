@@ -12,7 +12,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         const vrfCoordinatorV2_5Mock = await ethers.getContract(
             "VRFCoordinatorV2_5Mock",
         )
-        vrfCoordinatorV2_5address = vrfCoordinatorV2_5Mock.getAddress()
+        vrfCoordinatorV2_5address = await vrfCoordinatorV2_5Mock.getAddress()
         const txResponse = await vrfCoordinatorV2_5Mock.createSubscription()
         const txReceipt = await txResponse.wait()
         subscriptionId = txReceipt.logs[0].topics[1]
@@ -42,7 +42,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
         from: deployer,
         args: args,
         log: true,
-        waitConfirmations: network.config.blockConfirmations || 1,
+        waitConfirmations: network.config.blockConfirmations,
     })
 
     if (

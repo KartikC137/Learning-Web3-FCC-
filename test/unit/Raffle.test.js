@@ -7,7 +7,7 @@ const {
 
 !developmentChains.includes(network.name)
     ? describe.skip
-    : describe("Raffle", function () {
+    : describe("Raffle Unit Tests", function () {
           let raffle,
               vrfCoordinatorV2_5Mock,
               raffleEntranceFee,
@@ -30,7 +30,6 @@ const {
           describe("constructor", function () {
               it("intializes the raffle correctly", async function () {
                   // Ideally we make out tests have just 1 assert per "it"
-
                   const raffleState = await raffle.getRaffleState()
                   assert.equal(raffleState.toString(), "0")
                   assert.equal(
@@ -62,15 +61,16 @@ const {
                   ).to.emit(raffle, "RaffleEnter")
               })
               //   it("doesn't allow entrance when raffle is calculating", async function () {
+              //       console.log("value of interval is:" + Number(interval))
               //       await raffle.enterRaffle({ value: raffleEntranceFee })
               //       await network.provider.send("evm_increaseTime", [
-              //           interval.toNumber() + 1,
+              //           Number(interval) + 1,
               //       ])
               //       await network.provider.send("evm_mine", [])
 
               //       // Pretend to be a Chainklink Keeper
 
-              //       await raffle.performUpkeep([])
+              //       await raffle.performUpkeep("0x")
               //       await expect(
               //           raffle.enterRaffle({ value: raffleEntranceFee }),
               //       ).to.be.revertedWithCustomError(raffle, "Raffle__NotOpen")
